@@ -1,0 +1,7 @@
+^data-raw/ebi-source$
+^NOTES\.md$
+^bob\.md$
+^CLAUDE\.md$
+^anatomogramdata\.Rproj$
+^\.Rproj\.user$
+^\.claude$

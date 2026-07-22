@@ -1,0 +1,16 @@
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# personal/local-only, not part of the package
+bob.md
+.claude/settings.local.json
+
+# regenerable demo output
+examples/*.png
+
+# pkgdown/vignette build output (pre-emptive -- not used yet)
+docs/
+inst/doc

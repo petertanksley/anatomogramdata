@@ -1,0 +1,97 @@
+tissue_id,tissue_name,system
+UBERON_0002481,bone,Skeletal
+UBERON_00024818,bone,Skeletal
+UBERON_0007844,cartilage,Skeletal
+UBERON_0002371,bone marrow,Skeletal
+UBERON_0001134,skeletal muscle,Muscular
+UBERON_0001135,smooth muscle,Muscular
+UBERON_0001103,diaphragm,Muscular
+UBERON_0000014,skin,Integumentary
+UBERON_0001013,adipose tissue,Integumentary
+UBERON_0000955,brain,Nervous
+UBERON_0000956,cerebral cortex,Nervous
+UBERON_0000451,prefrontal cortex,Nervous
+UBERON_0001870,frontal cortex,Nervous
+UBERON_0001871,temporal lobe,Nervous
+UBERON_0001876,amygdala,Nervous
+UBERON_0001954,hippocampus,Nervous
+UBERON_0002421,hippocampus,Nervous
+UBERON_0002037,cerebellum,Nervous
+UBERON_0002245,cerebellar hemisphere,Nervous
+UBERON_0002240,spinal cord,Nervous
+UBERON_0001021,nerve,Nervous
+UBERON_0000970,eye,Nervous
+UBERON_0000966,retina,Nervous
+UBERON_0000007,pituitary gland,Endocrine
+UBERON_0002046,thyroid gland,Endocrine
+UBERON_0002369,adrenal gland,Endocrine
+UBERON_0001264,pancreas,Endocrine
+UBERON_0000178,blood,Cardiovascular
+UBERON_0001981,blood vessel,Cardiovascular
+UBERON_0001637,artery,Cardiovascular
+UBERON_0001621,coronary artery,Cardiovascular
+UBERON_0000947,aorta,Cardiovascular
+UBERON_0000948,heart,Cardiovascular
+UBERON_0002079,left atrium,Cardiovascular
+UBERON_0002084,left ventricle,Cardiovascular
+UBERON_0006618,atrial appendage,Cardiovascular
+UBERON_0002134,tricuspid valve,Cardiovascular
+UBERON_0002135,mitral valve,Cardiovascular
+UBERON_0002146,pulmonary valve,Cardiovascular
+CL_0000233,platelet,Cardiovascular
+UBERON_0000029,lymph node,Lymphatic/Immune
+UBERON_0002106,spleen,Lymphatic/Immune
+UBERON_0002372,tonsil,Lymphatic/Immune
+UBERON_0002371,bone marrow,Lymphatic/Immune
+UBERON_0001154,appendix,Lymphatic/Immune
+CL_0000084,T cell,Lymphatic/Immune
+CL_0000236,B cell,Lymphatic/Immune
+CL_0000576,monocyte,Lymphatic/Immune
+CL_0000623,natural killer cell,Lymphatic/Immune
+CL_0000738,leukocyte,Lymphatic/Immune
+UBERON_0000004,nose,Respiratory
+UBERON_0001706,nasal septum,Respiratory
+UBERON_0001728,nasal pharynx,Respiratory
+UBERON_0003126,trachea,Respiratory
+UBERON_0002185,bronchus,Respiratory
+UBERON_0002048,lung,Respiratory
+UBERON_0000977,pleura,Respiratory
+UBERON_0001103,diaphragm,Respiratory
+UBERON_0000341,throat,Respiratory
+UBERON_0000167,oral cavity,Digestive
+UBERON_0001723,tongue,Digestive
+UBERON_0001044,salivary gland,Digestive
+UBERON_0001736,submandibular gland,Digestive
+UBERON_0001831,parotid gland,Digestive
+UBERON_0000341,throat,Digestive
+UBERON_0001043,esophagus,Digestive
+UBERON_0007650,gastroesophageal junction,Digestive
+UBERON_0000945,stomach,Digestive
+UBERON_0002107,liver,Digestive
+UBERON_0002110,gall bladder,Digestive
+UBERON_0001264,pancreas,Digestive
+UBERON_0002108,small intestine,Digestive
+UBERON_0002114,duodenum,Digestive
+UBERON_0002116,ileum,Digestive
+UBERON_0001153,caecum,Digestive
+UBERON_0001154,appendix,Digestive
+UBERON_0001155,colon,Digestive
+UBERON_0001052,rectum,Digestive
+UBERON_0002113,kidney,Urinary
+UBERON_0001225,renal cortex,Urinary
+UBERON_0001255,urinary bladder,Urinary
+UBERON_0000310,breast,Reproductive
+UBERON_0000992,ovary,Reproductive
+UBERON_0003889,fallopian tube,Reproductive
+UBERON_0000995,uterus,Reproductive
+UBERON_0001295,endometrium,Reproductive
+UBERON_0000002,uterine cervix,Reproductive
+UBERON_0012249,ectocervix,Reproductive
+UBERON_0000996,vagina,Reproductive
+UBERON_0001987,placenta,Reproductive
+UBERON_0000473,testis,Reproductive
+UBERON_0001301,epididymis,Reproductive
+UBERON_0001000,vas deferens,Reproductive
+UBERON_0000998,seminal vesicle,Reproductive
+UBERON_0002367,prostate gland,Reproductive
+UBERON_0000989,penis,Reproductive
