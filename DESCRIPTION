@@ -12,7 +12,8 @@ Description: Provides tidy, ontology-tagged, ggplot2-ready human anatomogram
     (Jesper Maag et al.), but built independently from the underlying
     source rather than as a fork of its code or bundled data.
 License: MIT + file LICENSE
-URL: https://github.com/petertanksley/anatomogramdata
+URL: https://github.com/petertanksley/anatomogramdata,
+    https://petertanksley.github.io/anatomogramdata/
 BugReports: https://github.com/petertanksley/anatomogramdata/issues
 Encoding: UTF-8
 LazyData: true
@@ -20,3 +21,10 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
 Depends:
     R (>= 4.0.0)
+Suggests:
+    ggplot2,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3

@@ -1,7 +1,13 @@
-^data-raw/ebi-source$
-^NOTES\.md$
+^data-raw$
+^examples$
+^dev$
+^LICENSE\.md$
 ^bob\.md$
 ^CLAUDE\.md$
 ^anatomogramdata\.Rproj$
 ^\.Rproj\.user$
 ^\.claude$
+^\.github$
+^docs$
+^_pkgdown\.yml$
+^pkgdown$
