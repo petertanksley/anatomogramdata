@@ -1,0 +1,102 @@
+# anatomogramdata
+
+Tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data
+(`hgMale`/`hgFemale`), parsed directly from the [EBI Expression Atlas
+anatomogram SVG
+source](https://github.com/ebi-gene-expression-group/anatomogram) — not
+a frozen hardcoded snapshot.
+
+This is a **data package, not a plotting package**. There is no custom
+geom or plotting function — plot the bundled data with
+[`ggplot2::geom_map()`](https://ggplot2.tidyverse.org/reference/geom_map.html)
+or
+[`ggplot2::geom_polygon()`](https://ggplot2.tidyverse.org/reference/geom_polygon.html)
+directly, which already provide full aesthetic flexibility (fill, alpha,
+colour, linewidth, …) with no package-specific code needed.
+
+Human only (male + female) — no mouse/other-organism data.
+
+## Installation
+
+``` r
+
+# install.packages("remotes")
+remotes::install_github("petertanksley/anatomogramdata")
+```
+
+## Quick start
+
+[`anatomogram_select()`](https://petertanksley.github.io/anatomogramdata/reference/anatomogram_select.md)
+is the package’s single entry point for browsing, selecting, and
+filtering the bundled anatomy data.
+
+``` r
+
+library(anatomogramdata)
+library(ggplot2)
+
+# browse: what tissues and organ systems are available
+anatomogram_select("male")
+
+# select specific organs and attach a value to each (e.g. for fill)
+d <- anatomogram_select("male", organs = c(kidney = "High", heart = "Low"))
+
+ggplot(d, aes(x, y, group = group)) +
+  geom_polygon(data = subset(d, tissue_id == "outline"),
+               fill = "grey90", colour = "black") +
+  geom_polygon(data = subset(d, tissue_id != "outline"),
+               aes(fill = value), colour = "black") +
+  coord_fixed() +
+  theme_void()
+
+# or pull a whole organ system at once
+bones <- anatomogram_select("male", system = "Skeletal")
+```
+
+See `examples/` for more worked patterns, including faceting by organ
+system and the
+[`ggplot2::geom_map()`](https://ggplot2.tidyverse.org/reference/geom_map.html)
+power-user path for mapping more than one aesthetic at once.
+
+## Attribution
+
+Built directly from the EBI Expression Atlas anatomogram source
+(Apache-2.0 code / CC-BY-4.0 images), not a fork of the `gganatogram`
+package’s code or bundled data — though structurally indebted to
+`gganatogram` (Jesper Grud Skat Madsen / jespermaag) as prior art. See
+`dev/NOTES.md` for the full build history and attribution/licensing
+details.
+
+## License
+
+MIT © Peter Tanksley
+
+# Package index
+
+## Select, browse, and filter
+
+The package’s single entry point – browse tissues/systems, pull whole
+organ systems, or select specific organs (optionally attaching values).
+
+- [`anatomogram_select()`](https://petertanksley.github.io/anatomogramdata/reference/anatomogram_select.md)
+  : Browse, select, or filter anatomogram tissues – by organ, by organ
+  system
+
+## Data
+
+The bundled tissue polygon data and the hand-curated organ-system lookup
+it’s joined against.
+
+- [`hgMale`](https://petertanksley.github.io/anatomogramdata/reference/hgMale.md)
+  : Human male tissue polygon data
+- [`hgFemale`](https://petertanksley.github.io/anatomogramdata/reference/hgFemale.md)
+  : Human female tissue polygon data
+- [`organ_systems`](https://petertanksley.github.io/anatomogramdata/reference/organ_systems.md)
+  : Organ system membership for anatomogram tissues
+
+# Articles
+
+### All vignettes
+
+- [Getting started with
+  anatomogramdata](https://petertanksley.github.io/anatomogramdata/articles/anatomogramdata.md):
