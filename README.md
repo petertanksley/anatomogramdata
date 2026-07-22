@@ -22,7 +22,7 @@ remotes::install_github("<account>/anatomogramdata")
 
 ## Quick start
 
-`anatogram_select()` is the package's single entry point for browsing,
+`anatomogram_select()` is the package's single entry point for browsing,
 selecting, and filtering the bundled anatomy data.
 
 ```r
@@ -30,10 +30,10 @@ library(anatomogramdata)
 library(ggplot2)
 
 # browse: what tissues and organ systems are available
-anatogram_select("male")
+anatomogram_select("male")
 
 # select specific organs and attach a value to each (e.g. for fill)
-d <- anatogram_select("male", organs = c(kidney = "High", heart = "Low"))
+d <- anatomogram_select("male", organs = c(kidney = "High", heart = "Low"))
 
 ggplot(d, aes(x, y, group = group)) +
   geom_polygon(data = subset(d, tissue_id == "outline"),
@@ -44,7 +44,7 @@ ggplot(d, aes(x, y, group = group)) +
   theme_void()
 
 # or pull a whole organ system at once
-bones <- anatogram_select("male", system = "Skeletal")
+bones <- anatomogram_select("male", system = "Skeletal")
 ```
 
 See `examples/` for more worked patterns, including faceting by organ

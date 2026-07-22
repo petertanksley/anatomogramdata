@@ -16,6 +16,6 @@ and parsing details.
 hgFemale
 }
 \description{
-Same structure as \link{hgMale}, for the human female anatogram.
+Same structure as \link{hgMale}, for the human female anatomogram.
 }
 \keyword{datasets}

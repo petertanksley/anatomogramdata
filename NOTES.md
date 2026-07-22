@@ -562,3 +562,45 @@ output plots match Milestones 10/11 exactly (the bones/facets renders now
 additionally show the full outline detail per panel for free, per the
 improvement above). `examples/cause_of_death_demo.R`'s one comment
 reference updated too.
+
+## Milestone 13 (2026-07-22) — fixed anatogram_select() → anatomogram_select() naming mismatch
+
+Peter caught it: the package is `anatomogramdata` ("anatomogram" is EBI's
+actual term for these diagrams — the real repo is
+`ebi-gene-expression-group/anatomogram`), but every function built across
+Milestones 9-12 was named `anatogram_*` — missing the "mo" — and nobody
+had noticed. Checked the actual extent before touching anything: 82
+occurrences across 12 files, including the exported function itself, its
+source file, its generated `.Rd`, all `examples/*_demo.R` filenames and
+their contents, `README.md`, and `CLAUDE.md`. (`gganatogram`/`gganatogram2`
+references were left alone throughout — those are correctly spelled: the
+real upstream package is actually named `gganatogram`, no "mo," and our
+short-lived Milestone 9 wrapper deliberately echoed that spelling. The bug
+was only ever in *our own* `anatogram_*` coinage, never in those.)
+
+Fixed while it was still cheap to fix: nothing had been pushed yet (this
+landed right after Milestone 12's local-only initial commit), so this was
+a pure rename with zero downstream breakage —
+
+- `R/anatogram_select.R` → `R/anatomogram_select.R`; the function itself,
+  every internal message, and all roxygen text renamed
+  `anatogram_select()` → `anatomogram_select()`.
+- `examples/anatogram_select_demo.R` → `examples/anatomogram_select_demo.R`,
+  same for the `_system_` and `_values_` demo files; all internal calls
+  and `ggsave()` output filenames updated to match.
+- `R/data.R`: fixed two generic-prose uses of "anatogram" (describing
+  `hgFemale`/`organ_systems`, not naming a function) to "anatomogram," plus
+  the `[anatogram_select()]` cross-reference.
+- `README.md`, `CLAUDE.md`: every `anatogram_select()`/example-filename
+  reference corrected.
+- `devtools::document()` cleaned up the stale `man/anatogram_select.Rd`
+  automatically (same behavior confirmed back in Milestone 12); `NAMESPACE`
+  still exports exactly one function, now correctly named.
+
+**Deliberately not touched:** the Milestones 9-12 prose above this entry.
+Those describe what was actually built and named *at the time* — rewriting
+them to retroactively say `anatomogram_select()` would misrepresent the
+project's real history (and this milestone log has never edited past
+entries, only appended to them). If you're reading Milestones 9-12 and
+cross-referencing against the current code, mentally substitute
+`anatomogram_` for `anatogram_` in every function name.

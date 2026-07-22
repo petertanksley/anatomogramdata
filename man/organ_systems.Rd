@@ -3,7 +3,7 @@
 \docType{data}
 \name{organ_systems}
 \alias{organ_systems}
-\title{Organ system membership for anatogram tissues}
+\title{Organ system membership for anatomogram tissues}
 \format{
 A data frame, long format (one row per \code{tissue_id} x \code{system}
 pair -- a tissue belonging to more than one system, e.g. the pancreas
@@ -25,7 +25,7 @@ to one or more organ systems (Skeletal, Muscular, Integumentary, Nervous,
 Endocrine, Cardiovascular, Lymphatic/Immune, Respiratory, Digestive,
 Urinary, Reproductive). Nothing in the EBI SVG source encodes this --
 see \code{data-raw/organ_systems.csv} and \code{NOTES.md}, Milestone 11, for the
-curation approach. Use \code{\link[=anatogram_select]{anatogram_select()}} rather than joining against
+curation approach. Use \code{\link[=anatomogram_select]{anatomogram_select()}} rather than joining against
 this table directly for the common case.
 }
 \keyword{datasets}

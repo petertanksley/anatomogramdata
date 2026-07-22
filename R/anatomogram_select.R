@@ -2,7 +2,7 @@
 # ontology ID or a fuzzy, case-insensitive partial match against
 # tissue_name. Returns a data frame with tissue_id and value columns,
 # already filtered down to the terms that resolved (unmatched terms warn
-# and are dropped here). Not exported -- internal to anatogram_select()'s
+# and are dropped here). Not exported -- internal to anatomogram_select()'s
 # organ mode.
 resolve_organs <- function(organs, lookup) {
   nm <- names(organs)
@@ -52,14 +52,14 @@ resolve_organs <- function(organs, lookup) {
   data.frame(tissue_id = resolved_id[keep], value = vals[keep], stringsAsFactors = FALSE)
 }
 
-#' Browse, select, or filter anatogram tissues -- by organ, by organ system
+#' Browse, select, or filter anatomogram tissues -- by organ, by organ system
 #'
 #' A single entry point for the three things you'd otherwise need separate
 #' functions for: browsing what tissues/systems exist, pulling one or more
 #' whole organ systems, or selecting specific organs (optionally attaching
 #' a value to each, e.g. for `fill`). Output is always shaped for
-#' `ggplot2::geom_polygon()` directly (see `examples/anatogram_values_demo.R`,
-#' `examples/anatogram_system_demo.R`) -- no `geom_map()` join needed.
+#' `ggplot2::geom_polygon()` directly (see `examples/anatomogram_values_demo.R`,
+#' `examples/anatomogram_system_demo.R`) -- no `geom_map()` join needed.
 #'
 #' @param sex `"male"` or `"female"`.
 #' @param organs `NULL` (default), or a character vector selecting specific
@@ -74,7 +74,7 @@ resolve_organs <- function(organs, lookup) {
 #'   elements are pure selection. Mutually exclusive with `system`.
 #' @param system `NULL` (default), or a character vector of one or more
 #'   organ systems (see [organ_systems] for the full list, or call
-#'   `anatogram_select(sex)` with `organs`/`system` both `NULL` to browse).
+#'   `anatomogram_select(sex)` with `organs`/`system` both `NULL` to browse).
 #'   Unknown names error listing the valid ones. Mutually exclusive with
 #'   `organs`.
 #' @param value_name Name of the column holding attached values in organ
@@ -90,18 +90,18 @@ resolve_organs <- function(organs, lookup) {
 #'   mode).
 #'
 #' @examples
-#' anatogram_select("male")                              # browse
-#' anatogram_select("male", system = "Skeletal")          # all bones
-#' anatogram_select("male", organs = c(kidney = "high"))  # one organ, valued
+#' anatomogram_select("male")                              # browse
+#' anatomogram_select("male", system = "Skeletal")          # all bones
+#' anatomogram_select("male", organs = c(kidney = "high"))  # one organ, valued
 #'
 #' @export
-anatogram_select <- function(sex = c("male", "female"), organs = NULL, system = NULL,
+anatomogram_select <- function(sex = c("male", "female"), organs = NULL, system = NULL,
                               value_name = "value", outline = TRUE) {
   sex <- match.arg(sex)
   base <- switch(sex, male = hgMale, female = hgFemale)
 
   if (!is.null(organs) && !is.null(system)) {
-    stop("Specify `organs` or `system`, not both -- call anatogram_select() ",
+    stop("Specify `organs` or `system`, not both -- call anatomogram_select() ",
          "twice and rbind() the results if you need both.", call. = FALSE)
   }
 
@@ -115,7 +115,7 @@ anatogram_select <- function(sex = c("male", "female"), organs = NULL, system = 
     unknown <- setdiff(system, valid_systems)
     if (length(unknown) > 0) {
       stop("Unknown system(s): ", paste(unknown, collapse = ", "),
-           ". Call anatogram_select(sex) with `organs`/`system` both NULL to list valid names.",
+           ". Call anatomogram_select(sex) with `organs`/`system` both NULL to list valid names.",
            call. = FALSE)
     }
 

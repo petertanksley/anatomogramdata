@@ -1,4 +1,4 @@
-# Demo: human male anatogram highlighting organs associated with several
+# Demo: human male anatomogram highlighting organs associated with several
 # CDC-style leading-cause-of-death categories, using ggplot2::geom_map()
 # directly (see NOTES.md, Milestone 8/9 -- no custom plotting function
 # ships in this package; geom_map() already provides everything needed).
@@ -21,7 +21,7 @@ library(ggplot2)
 
 # hgMale's `id` column defaults to tissue_id (UBERON/CL codes), since that's
 # the exact, unambiguous key. To key by plain-English name instead (nobody
-# should have to memorize ontology codes -- see anatogram_select("male")
+# should have to memorize ontology codes -- see anatomogram_select("male")
 # to browse what's available), just re-point `id` at `tissue_name`:
 organs_map <- hgMale[hgMale$tissue_id != "outline", ]
 organs_map$id <- organs_map$tissue_name

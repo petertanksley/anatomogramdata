@@ -46,7 +46,7 @@
 
 #' Human female tissue polygon data
 #'
-#' Same structure as [hgMale], for the human female anatogram.
+#' Same structure as [hgMale], for the human female anatomogram.
 #'
 #' @format See [hgMale].
 #' @source \url{https://github.com/ebi-gene-expression-group/anatomogram}
@@ -54,14 +54,14 @@
 #'   and parsing details.
 "hgFemale"
 
-#' Organ system membership for anatogram tissues
+#' Organ system membership for anatomogram tissues
 #'
 #' A hand-curated lookup table mapping each `tissue_id` in [hgMale]/[hgFemale]
 #' to one or more organ systems (Skeletal, Muscular, Integumentary, Nervous,
 #' Endocrine, Cardiovascular, Lymphatic/Immune, Respiratory, Digestive,
 #' Urinary, Reproductive). Nothing in the EBI SVG source encodes this --
 #' see `data-raw/organ_systems.csv` and `NOTES.md`, Milestone 11, for the
-#' curation approach. Use [anatogram_select()] rather than joining against
+#' curation approach. Use [anatomogram_select()] rather than joining against
 #' this table directly for the common case.
 #'
 #' @format A data frame, long format (one row per `tissue_id` x `system`

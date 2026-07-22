@@ -3,7 +3,7 @@
 # gganatogram2() convenience wrapper was tried and then dropped, since
 # geom_map() already covers everything it did and more, with no custom
 # ggproto Geom needed). geom_map() already extends GeomPolygon and does an
-# id-based join exactly like a bespoke geom_anatogram() would, inheriting
+# id-based join exactly like a bespoke geom_anatomogram() would, inheriting
 # every GeomPolygon aesthetic (fill, alpha, colour, linewidth, linetype)
 # automatically.
 #
