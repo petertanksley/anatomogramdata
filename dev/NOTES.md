@@ -604,3 +604,76 @@ project's real history (and this milestone log has never edited past
 entries, only appended to them). If you're reading Milestones 9-12 and
 cross-referencing against the current code, mentally substitute
 `anatomogram_` for `anatogram_` in every function name.
+
+## Milestone 14 (2026-07-22) — public repo, package hygiene, live pkgdown site
+
+The push to GitHub and the site both went out this session. In order:
+
+**Repo cleanup + first commit.** No `.gitignore` existed yet. Added one
+(RStudio state, `bob.md`, `.claude/settings.local.json`,
+`examples/*.png` — all local-only or regenerable), deleted stray
+`.DS_Store` files, wrote `README.md`, `git init`, one commit collecting
+Milestones 1-12 as the starting point. Deliberately did not add a remote
+or push in that pass — no URL existed yet, and pushing needs explicit
+go-ahead regardless.
+
+**Pushed.** Peter created the empty GitHub repo
+(`github.com/petertanksley/anatomogramdata`) and handed over the URL.
+Added `URL`/`BugReports` to `DESCRIPTION`, added the remote, confirmed via
+`git ls-remote` that the repo was genuinely empty (no conflict risk), then
+pushed on explicit confirmation.
+
+**Package hygiene pass**, prompted by a direct feature-gap review: added
+`Suggests: ggplot2, knitr, rmarkdown, testthat` to `DESCRIPTION` (every
+example already required ggplot2; nothing declared it); a `tests/testthat/`
+suite (32 tests) formalizing every scenario already manually re-verified
+across Milestones 10-13 (browse/system/organ modes, all four error paths,
+the `match()`-not-`merge()` vertex-order guarantee, `organ_systems`
+two-way coverage); `inst/CITATION` with two `bibentry()`s (package + the
+underlying EBI Expression Atlas source), since the bundled images are
+CC-BY-4.0 and require downstream attribution; `utils::globalVariables()`
+for `hgMale`/`hgFemale`/`organ_systems` and `.Rbuildignore` entries for
+`data-raw`/`examples`/`LICENSE.md`, clearing `devtools::check()` down to
+**0 errors, 0 warnings, 0 notes**.
+
+**pkgdown site.** Added `vignettes/anatomogramdata.Rmd` (the
+`anatomogram_select()` three-mode walkthrough, condensed from this
+session's chat and `examples/anatomogram_select_demo.R`), `_pkgdown.yml`
+with a grouped reference index, and `.github/workflows/pkgdown.yaml` via
+`usethis::use_pkgdown_github_pages()`. That call did more than scaffold
+local files — it also reached out to the live GitHub repo directly
+(created the `gh-pages` branch, set the Pages source, set the repo
+homepage), which wasn't anticipated going in and was flagged to Peter
+after the fact rather than before, since the other `usethis::use_*()`
+calls this session were local-file-only.
+
+**Caught before it shipped:** a local `pkgdown::build_site()` test run
+showed `CLAUDE.md` and `NOTES.md` each becoming their own public,
+search-indexed page — confirmed against pkgdown's own documentation, not
+assumed (`build_home()` auto-converts *every* top-level `.md` file, no
+per-file opt-out). Per Peter's call: `CLAUDE.md` untracked entirely
+(`git rm --cached`, added to `.gitignore` — stays on disk for Claude
+Code's own use, since it can't be relocated without breaking that, but no
+longer part of the repo going forward) and `NOTES.md` moved to
+`dev/NOTES.md` (this file, at this path, from this point on — still
+tracked in git for anyone browsing the repo, just out of pkgdown's reach).
+Every cross-reference updated: `R/data.R`, all of `examples/*.R` and
+`data-raw/*.R`, `README.md`, `LICENSE.md`. Note for future-me: `CLAUDE.md`
+is still recoverable from the first two commits' history even though it's
+untracked going forward — purging that would need a rewrite + force-push,
+not done here, only worth doing if Peter asks for it specifically.
+
+**Shipped and verified live**, not just "pushed and assumed": confirmed
+via the GitHub API that the `pkgdown.yaml` Action's `pkgdown` job
+completed successfully end-to-end (build + deploy steps both green), that
+the `gh-pages` branch actually contains the built site
+(`index.html`, `articles/`, `reference/`, etc.), and — after an initial
+404 that turned out to be ordinary CDN propagation lag — that
+<https://petertanksley.github.io/anatomogramdata/> serves `200` on the
+homepage and on `reference/anatomogram_select.html` and
+`articles/anatomogramdata.html`, while `CLAUDE.html`/`NOTES.html` both
+correctly `404` (confirming they never reached the public site).
+
+Five commits total on `main`, all pushed: initial import, the
+`anatomogram_select()` naming fix (Milestone 13), the `DESCRIPTION` URL
+addition, the package-hygiene pass, and the pkgdown scaffold.

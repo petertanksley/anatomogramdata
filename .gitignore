@@ -7,7 +7,7 @@
 # personal/local-only, not part of the package
 bob.md
 CLAUDE.md
-.claude/settings.local.json
+.claude/
 
 # regenerable demo output
 examples/*.png
