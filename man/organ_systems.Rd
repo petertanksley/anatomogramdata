@@ -24,7 +24,7 @@ A hand-curated lookup table mapping each \code{tissue_id} in \link{hgMale}/\link
 to one or more organ systems (Skeletal, Muscular, Integumentary, Nervous,
 Endocrine, Cardiovascular, Lymphatic/Immune, Respiratory, Digestive,
 Urinary, Reproductive). Nothing in the EBI SVG source encodes this --
-see \code{data-raw/organ_systems.csv} and \code{NOTES.md}, Milestone 11, for the
+see \code{data-raw/organ_systems.csv} and \code{dev/NOTES.md}, Milestone 11, for the
 curation approach. Use \code{\link[=anatomogram_select]{anatomogram_select()}} rather than joining against
 this table directly for the common case.
 }

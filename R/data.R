@@ -2,7 +2,7 @@
 #'
 #' A tidy tibble of body-outline and organ polygons for the human male
 #' anatogram, parsed directly from the EBI Expression Atlas anatomogram SVG
-#' source (see `data-raw/build_data.R` and `NOTES.md`).
+#' source (see `data-raw/build_data.R` and `dev/NOTES.md`).
 #'
 #' @format A tibble with one row per polygon vertex:
 #' \describe{
@@ -10,7 +10,7 @@
 #'     for the body silhouette.}
 #'   \item{tissue_name}{Human-readable tissue name from the SVG's `<title>`
 #'     element, where present (`NA` for a handful of cell-type-marker
-#'     tissues -- see `NOTES.md`).}
+#'     tissues -- see `dev/NOTES.md`).}
 #'   \item{ontology}{Ontology prefix (`"UBERON"` or `"CL"`), or `NA` for the
 #'     outline.}
 #'   \item{element_index, subpath}{Internal grouping keys -- use
@@ -30,17 +30,17 @@
 #'     every plot to reverse it itself -- `scale_y_reverse()` actively
 #'     breaks `ggplot2::geom_map()`, since `geom_map()`'s polygon
 #'     coordinates never pass through the normal scale-training pipeline.
-#'     See `NOTES.md`, Milestone 8.)}
+#'     See `dev/NOTES.md`, Milestone 8.)}
 #'   \item{outline_role}{For `tissue_id == "outline"` rows only (`NA`
 #'     otherwise): `"silhouette"` (the plain outer body shape),
 #'     `"contour_detail"` (the same full-body shape but with interior
 #'     cut-lines for fingers/toes/ears/joints), or `"feature"` (small
 #'     facial marks -- eyes, nostril, mouth). Classified from geometry at
 #'     build time (bounding-box area, then point count), not from any tag
-#'     in the SVG source -- see `NOTES.md`, Milestone 11.}
+#'     in the SVG source -- see `dev/NOTES.md`, Milestone 11.}
 #' }
 #' @source \url{https://github.com/ebi-gene-expression-group/anatomogram}
-#'   (images CC-BY-4.0, code Apache-2.0). See `NOTES.md` for attribution
+#'   (images CC-BY-4.0, code Apache-2.0). See `dev/NOTES.md` for attribution
 #'   and parsing details.
 "hgMale"
 
@@ -50,7 +50,7 @@
 #'
 #' @format See [hgMale].
 #' @source \url{https://github.com/ebi-gene-expression-group/anatomogram}
-#'   (images CC-BY-4.0, code Apache-2.0). See `NOTES.md` for attribution
+#'   (images CC-BY-4.0, code Apache-2.0). See `dev/NOTES.md` for attribution
 #'   and parsing details.
 "hgFemale"
 
@@ -60,7 +60,7 @@
 #' to one or more organ systems (Skeletal, Muscular, Integumentary, Nervous,
 #' Endocrine, Cardiovascular, Lymphatic/Immune, Respiratory, Digestive,
 #' Urinary, Reproductive). Nothing in the EBI SVG source encodes this --
-#' see `data-raw/organ_systems.csv` and `NOTES.md`, Milestone 11, for the
+#' see `data-raw/organ_systems.csv` and `dev/NOTES.md`, Milestone 11, for the
 #' curation approach. Use [anatomogram_select()] rather than joining against
 #' this table directly for the common case.
 #'

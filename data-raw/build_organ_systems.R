@@ -1,5 +1,5 @@
 # Builds data/organ_systems.rda from the hand-curated data-raw/organ_systems.csv
-# (see NOTES.md, Milestone 11 -- there's no organ-system hierarchy in the EBI
+# (see dev/NOTES.md, Milestone 11 -- there's no organ-system hierarchy in the EBI
 # source to derive this from, so it's a manual mapping). Sourced from
 # data-raw/build_data.R, which must run first: this script validates its
 # coverage against the just-built hgMale/hgFemale, so both must already

@@ -9,7 +9,7 @@ See \link{hgMale}.
 }
 \source{
 \url{https://github.com/ebi-gene-expression-group/anatomogram}
-(images CC-BY-4.0, code Apache-2.0). See \code{NOTES.md} for attribution
+(images CC-BY-4.0, code Apache-2.0). See \code{dev/NOTES.md} for attribution
 and parsing details.
 }
 \usage{

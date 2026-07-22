@@ -1,5 +1,5 @@
 # Demo: using ggplot2::geom_map() directly with hgMale -- this is THE way
-# to plot this package's data (see NOTES.md, Milestones 8-9: an earlier
+# to plot this package's data (see dev/NOTES.md, Milestones 8-9: an earlier
 # gganatogram2() convenience wrapper was tried and then dropped, since
 # geom_map() already covers everything it did and more, with no custom
 # ggproto Geom needed). geom_map() already extends GeomPolygon and does an

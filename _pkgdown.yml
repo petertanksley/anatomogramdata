@@ -1,0 +1,16 @@
+url: https://petertanksley.github.io/anatomogramdata/
+template:
+  bootstrap: 5
+reference:
+- title: Select, browse, and filter
+  desc: |
+    The package's single entry point -- browse tissues/systems, pull whole organ systems, or select specific organs (optionally attaching values).
+  contents: anatomogram_select
+- title: Data
+  desc: |
+    The bundled tissue polygon data and the hand-curated organ-system lookup it's joined against.
+  contents:
+  - hgMale
+  - hgFemale
+  - organ_systems
+

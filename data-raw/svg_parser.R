@@ -1,13 +1,13 @@
 # Milestone 2/3: parses the EBI Expression Atlas anatomogram SVG source
 # directly into a tidy polygon tibble, replacing gganatogram's frozen
-# 2018 hardcoded-coordinate snapshot. See NOTES.md for background.
+# 2018 hardcoded-coordinate snapshot. See dev/NOTES.md for background.
 #
 # Pure function definitions only -- no top-level side effects, so this can
 # be sourced from multiple entry points (data-raw/validate_parser.R,
 # data-raw/build_data.R) without re-running anything.
 #
 # Scope (confirmed by inspecting the male + female sources directly -- see
-# NOTES.md for how):
+# dev/NOTES.md for how):
 #   - Path commands: M, L, C, A, Z, all ABSOLUTE. No relative commands and
 #     no S/Q/T shorthand curves appear anywhere in this source, so they are
 #     not supported -- an unrecognized command is a hard error, not a
@@ -16,7 +16,7 @@
 #     <circle>, <rect>, and <use> (stamps a shared "leukocyte" icon, id
 #     CL_0000738, onto blood-bearing tissues; these are cell-type markers,
 #     not anatomical outlines -- worth treating as a separate concern
-#     later, see NOTES.md).
+#     later, see dev/NOTES.md).
 #   - Transforms: matrix(), translate(), scale(), possibly chained within
 #     one transform= string, and nested through <g>/<a> ancestors.
 #   - Numbers may use scientific notation (e.g. "1.4e-6").

@@ -1,12 +1,12 @@
 # Validation: parse each source SVG and sanity-check against gganatogram's own
-# rendering of the same tissues. See NOTES.md (Milestones 2-3) for context.
+# rendering of the same tissues. See dev/NOTES.md (Milestones 2-3) for context.
 
 source("data-raw/svg_parser.R")
 library(ggplot2)
 
 # No limb-segment tissue exists in this dataset (Expression Atlas's 82
 # profiled tissues are internal organs, not limb regions -- confirmed by
-# listing distinct tissue_name values, see NOTES.md). Outline/heart/lung
+# listing distinct tissue_name values, see dev/NOTES.md). Outline/heart/lung
 # instead: lung is a paired organ, good test of disjoint-blob
 # (subpath/element_index) grouping.
 compare_ids <- c("outline", "UBERON_0000948", "UBERON_0002048")

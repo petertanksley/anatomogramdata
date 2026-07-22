@@ -25,5 +25,5 @@ SOFTWARE.
 Note: this license covers the package code. The bundled `hgMale`/`hgFemale`
 tissue-polygon data is parsed from the EBI Expression Atlas anatomogram SVG
 source (https://github.com/ebi-gene-expression-group/anatomogram), whose
-images are licensed CC-BY-4.0 (code Apache-2.0). See `NOTES.md` for details
+images are licensed CC-BY-4.0 (code Apache-2.0). See `dev/NOTES.md` for details
 and attribution.

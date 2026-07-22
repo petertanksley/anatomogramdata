@@ -1,6 +1,6 @@
 # Builds the package's bundled data objects (data/hgMale.rda, data/hgFemale.rda)
 # from the EBI anatomogram SVG source. Re-run this whenever the source SVGs
-# change; it's the only place hgMale/hgFemale get regenerated. See NOTES.md.
+# change; it's the only place hgMale/hgFemale get regenerated. See dev/NOTES.md.
 
 source("data-raw/svg_parser.R")
 
@@ -8,7 +8,7 @@ source("data-raw/svg_parser.R")
 # to standard Cartesian (removes the need for scale_y_reverse() everywhere
 # downstream, which is not just a convenience: scale_y_reverse() actively
 # breaks ggplot2::geom_map(), since geom_map()'s polygon coordinates never
-# pass through the normal scale-training pipeline -- see NOTES.md,
+# pass through the normal scale-training pipeline -- see dev/NOTES.md,
 # Milestone 8), and adds the `id`/`group` columns geom_map() requires.
 # `group` in particular is not optional: without it, geom_map() defaults
 # grouping to `id` and merges multi-blob organs (e.g. the two lungs) into
@@ -33,7 +33,7 @@ hgFemale <- prep_for_package(extract_tissue_paths("data-raw/ebi-source/homo_sapi
 # between those two, the one with more vertices is consistently the
 # version with interior contour/joint lines cut into it (fingers, toes,
 # ears), while the one with fewer is the plain silhouette. Everything else
-# is a small facial/decorative mark. See NOTES.md, Milestone 11.
+# is a small facial/decorative mark. See dev/NOTES.md, Milestone 11.
 classify_outline_role <- function(df) {
   df$outline_role <- NA_character_
   out_idx <- which(df$tissue_id == "outline")

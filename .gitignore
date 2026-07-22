@@ -6,11 +6,12 @@
 
 # personal/local-only, not part of the package
 bob.md
+CLAUDE.md
 .claude/settings.local.json
 
 # regenerable demo output
 examples/*.png
 
-# pkgdown/vignette build output (pre-emptive -- not used yet)
+# pkgdown/vignette build output
 docs/
 inst/doc

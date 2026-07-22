@@ -11,7 +11,7 @@ A tibble with one row per polygon vertex:
 for the body silhouette.}
 \item{tissue_name}{Human-readable tissue name from the SVG's \verb{<title>}
 element, where present (\code{NA} for a handful of cell-type-marker
-tissues -- see \code{NOTES.md}).}
+tissues -- see \code{dev/NOTES.md}).}
 \item{ontology}{Ontology prefix (\code{"UBERON"} or \code{"CL"}), or \code{NA} for the
 outline.}
 \item{element_index, subpath}{Internal grouping keys -- use
@@ -31,19 +31,19 @@ been flipped once, at package-data build time, rather than asking
 every plot to reverse it itself -- \code{scale_y_reverse()} actively
 breaks \code{ggplot2::geom_map()}, since \code{geom_map()}'s polygon
 coordinates never pass through the normal scale-training pipeline.
-See \code{NOTES.md}, Milestone 8.)}
+See \code{dev/NOTES.md}, Milestone 8.)}
 \item{outline_role}{For \code{tissue_id == "outline"} rows only (\code{NA}
 otherwise): \code{"silhouette"} (the plain outer body shape),
 \code{"contour_detail"} (the same full-body shape but with interior
 cut-lines for fingers/toes/ears/joints), or \code{"feature"} (small
 facial marks -- eyes, nostril, mouth). Classified from geometry at
 build time (bounding-box area, then point count), not from any tag
-in the SVG source -- see \code{NOTES.md}, Milestone 11.}
+in the SVG source -- see \code{dev/NOTES.md}, Milestone 11.}
 }
 }
 \source{
 \url{https://github.com/ebi-gene-expression-group/anatomogram}
-(images CC-BY-4.0, code Apache-2.0). See \code{NOTES.md} for attribution
+(images CC-BY-4.0, code Apache-2.0). See \code{dev/NOTES.md} for attribution
 and parsing details.
 }
 \usage{
@@ -52,6 +52,6 @@ hgMale
 \description{
 A tidy tibble of body-outline and organ polygons for the human male
 anatogram, parsed directly from the EBI Expression Atlas anatomogram SVG
-source (see \code{data-raw/build_data.R} and \code{NOTES.md}).
+source (see \code{data-raw/build_data.R} and \code{dev/NOTES.md}).
 }
 \keyword{datasets}

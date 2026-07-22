@@ -2,7 +2,7 @@
 # and separating the outer body silhouette from its interior contour detail
 # via the outline_role column. Neither of these is derived from any tag in
 # the EBI SVG source -- both are computed (geometry for outline_role,
-# hand-curated lookup for organ system) -- see NOTES.md, Milestones 11-12.
+# hand-curated lookup for organ system) -- see dev/NOTES.md, Milestones 11-12.
 
 devtools::load_all(".", quiet = TRUE)
 library(ggplot2)

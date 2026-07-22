@@ -1,6 +1,6 @@
 # Demo: human male anatomogram highlighting organs associated with several
 # CDC-style leading-cause-of-death categories, using ggplot2::geom_map()
-# directly (see NOTES.md, Milestone 8/9 -- no custom plotting function
+# directly (see dev/NOTES.md, Milestone 8/9 -- no custom plotting function
 # ships in this package; geom_map() already provides everything needed).
 #
 # IMPORTANT: the category NAMES below are real, well-established public

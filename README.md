@@ -57,7 +57,7 @@ Built directly from the EBI Expression Atlas anatomogram source
 (Apache-2.0 code / CC-BY-4.0 images), not a fork of the `gganatogram`
 package's code or bundled data — though structurally indebted to
 `gganatogram` (Jesper Grud Skat Madsen / jespermaag) as prior art. See
-`NOTES.md` for the full build history and attribution/licensing details.
+`dev/NOTES.md` for the full build history and attribution/licensing details.
 
 ## License
 
