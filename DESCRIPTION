@@ -12,6 +12,8 @@ Description: Provides tidy, ontology-tagged, ggplot2-ready human anatomogram
     (Jesper Maag et al.), but built independently from the underlying
     source rather than as a fork of its code or bundled data.
 License: MIT + file LICENSE
+URL: https://github.com/petertanksley/anatomogramdata
+BugReports: https://github.com/petertanksley/anatomogramdata/issues
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

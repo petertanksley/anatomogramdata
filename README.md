@@ -17,7 +17,7 @@ Human only (male + female) — no mouse/other-organism data.
 
 ```r
 # install.packages("remotes")
-remotes::install_github("<account>/anatomogramdata")
+remotes::install_github("petertanksley/anatomogramdata")
 ```
 
 ## Quick start
