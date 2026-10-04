@@ -4,13 +4,14 @@ Version: 0.0.0.9000
 Authors@R: person("Peter", "Tanksley", email = "peter_tanksley@txstate.edu", role = c("aut", "cre"))
 Description: Provides tidy, ontology-tagged, ggplot2-ready human anatomogram
     polygon data (hgMale/hgFemale), parsed directly from the EBI Expression
-    Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images) rather
-    than relying on a frozen hardcoded snapshot. This is a data package, not
-    a plotting package -- plot the bundled data with ggplot2::geom_map(),
-    which already provides full aesthetic flexibility (see examples/).
-    Inspired by and structurally indebted to the gganatogram package
-    (Jesper Maag et al.), but built independently from the underlying
-    source rather than as a fork of its code or bundled data.
+    Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images). This
+    is a data package, not a plotting package -- plot the bundled data with
+    ggplot2::geom_map(), which already provides full aesthetic flexibility
+    (see examples/).
+    An updated, independent reimplementation of the gganatogram package
+    (Maag 2018, <doi:10.12688/f1000research.16409.2>), whose idea, approach
+    and dataset names it follows; no gganatogram code or data is reused.
+    The code was written almost entirely by Claude (Anthropic).
 License: MIT + file LICENSE
 URL: https://github.com/petertanksley/anatomogramdata,
     https://petertanksley.github.io/anatomogramdata/

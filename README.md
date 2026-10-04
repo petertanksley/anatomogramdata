@@ -2,8 +2,7 @@
 
 Tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data
 (`hgMale`/`hgFemale`), parsed directly from the [EBI Expression Atlas
-anatomogram SVG source](https://github.com/ebi-gene-expression-group/anatomogram)
-— not a frozen hardcoded snapshot.
+anatomogram SVG source](https://github.com/ebi-gene-expression-group/anatomogram).
 
 This is a **data package, not a plotting package**. There is no custom
 geom or plotting function — plot the bundled data with
@@ -12,6 +11,28 @@ provide full aesthetic flexibility (fill, alpha, colour, linewidth, ...)
 with no package-specific code needed.
 
 Human only (male + female) — no mouse/other-organism data.
+
+## Credit where it's due
+
+anatomogramdata is the intellectual godchild of
+[gganatogram](https://github.com/jespermaag/gganatogram) by Jesper Maag
+([Maag 2018, *F1000Research*](https://doi.org/10.12688/f1000research.16409.2)).
+gganatogram did the original, hard work of bringing the EBI Expression
+Atlas anatomograms into R and ggplot2, and this package would not exist
+without it. The idea, the approach, and the `hgMale`/`hgFemale` dataset
+names all come from there.
+
+I needed an anatomogram for mortality surveillance work on cancer sites
+and wanted to bring that work up to date: the polygons are traced fresh
+from the current EBI source drawings, and every tissue carries its
+ontology ID and organ system. The code is new and reuses none of
+gganatogram's code or data, which is why the licences differ (see below).
+
+The code was written almost entirely by Claude (Anthropic's AI model),
+working from my direction. I can't take intellectual credit for the idea,
+which belongs to gganatogram and its author, or for the work, which was
+Claude's. If you use this package, please cite gganatogram as well;
+`citation("anatomogramdata")` lists it.
 
 ## Installation
 
@@ -51,13 +72,14 @@ See `examples/` for more worked patterns, including faceting by organ
 system and the `ggplot2::geom_map()` power-user path for mapping more than
 one aesthetic at once.
 
-## Attribution
+## Sources and licensing
 
-Built directly from the EBI Expression Atlas anatomogram source
-(Apache-2.0 code / CC-BY-4.0 images), not a fork of the `gganatogram`
-package's code or bundled data — though structurally indebted to
-`gganatogram` (Jesper Grud Skat Madsen / jespermaag) as prior art. See
-`dev/NOTES.md` for the full build history and attribution/licensing details.
+The polygons are parsed from the EBI Expression Atlas anatomogram source
+(Apache-2.0 code / CC-BY-4.0 images). The CC-BY-4.0 images require
+attribution, so cite the EBI source alongside this package
+(`citation("anatomogramdata")` lists it). No `gganatogram` code or bundled
+data is reused, which is why this package is MIT rather than GPL-2. See
+`dev/NOTES.md` for the full build history.
 
 ## License
 

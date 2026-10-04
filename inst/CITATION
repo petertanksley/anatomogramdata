@@ -4,7 +4,19 @@ bibentry(
   author  = person("Peter", "Tanksley"),
   year    = "2026",
   url     = "https://github.com/petertanksley/anatomogramdata",
-  note    = "R package. Parsing pipeline structurally indebted to the gganatogram package (Jesper Grud Skat Madsen / jespermaag) as prior art, but built independently against the live EBI source rather than as a fork of its code or bundled data."
+  note    = "R package. An updated, independent reimplementation of the gganatogram package (Maag 2018, cited below), whose idea it follows; please cite gganatogram as well. Code written almost entirely by Claude (Anthropic)."
+)
+
+bibentry(
+  bibtype = "Article",
+  title   = "gganatogram: An R package for modular visualisation of anatograms and tissues based on ggplot2",
+  author  = person("Jesper L. V.", "Maag"),
+  journal = "F1000Research",
+  volume  = "7",
+  pages   = "1576",
+  year    = "2018",
+  doi     = "10.12688/f1000research.16409.2",
+  note    = "The original package. anatomogramdata follows its idea and approach; please cite it."
 )
 
 bibentry(
