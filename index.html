@@ -11,8 +11,8 @@
 <script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Tidy Human Anatomogram Polygon Data from the EBI Expression Atlas Source">
-<meta name="description" content="Provides tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (hgMale/hgFemale), parsed directly from the EBI Expression Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images) rather than relying on a frozen hardcoded snapshot. This is a data package, not a plotting package -- plot the bundled data with ggplot2::geom_map(), which already provides full aesthetic flexibility (see examples/). Inspired by and structurally indebted to the gganatogram package (Jesper Maag et al.), but built independently from the underlying source rather than as a fork of its code or bundled data.">
-<meta property="og:description" content="Provides tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (hgMale/hgFemale), parsed directly from the EBI Expression Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images) rather than relying on a frozen hardcoded snapshot. This is a data package, not a plotting package -- plot the bundled data with ggplot2::geom_map(), which already provides full aesthetic flexibility (see examples/). Inspired by and structurally indebted to the gganatogram package (Jesper Maag et al.), but built independently from the underlying source rather than as a fork of its code or bundled data.">
+<meta name="description" content="Provides tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (hgMale/hgFemale), parsed directly from the EBI Expression Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images). This is a data package, not a plotting package -- plot the bundled data with ggplot2::geom_map(), which already provides full aesthetic flexibility (see examples/). An updated, independent reimplementation of the gganatogram package (Maag 2018, &lt;doi:10.12688/f1000research.16409.2&gt;), whose idea, approach and dataset names it follows; no gganatogram code or data is reused. The code was written almost entirely by Claude (Anthropic).">
+<meta property="og:description" content="Provides tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (hgMale/hgFemale), parsed directly from the EBI Expression Atlas anatomogram SVG source (Apache-2.0 code / CC-BY-4.0 images). This is a data package, not a plotting package -- plot the bundled data with ggplot2::geom_map(), which already provides full aesthetic flexibility (see examples/). An updated, independent reimplementation of the gganatogram package (Maag 2018, &lt;doi:10.12688/f1000research.16409.2&gt;), whose idea, approach and dataset names it follows; no gganatogram code or data is reused. The code was written almost entirely by Claude (Anthropic).">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -49,9 +49,16 @@
   <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="anatomogramdata">anatomogramdata<a class="anchor" aria-label="anchor" href="#anatomogramdata"></a>
 </h1></div>
-<p>Tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (<code>hgMale</code>/<code>hgFemale</code>), parsed directly from the <a href="https://github.com/ebi-gene-expression-group/anatomogram" class="external-link">EBI Expression Atlas anatomogram SVG source</a> — not a frozen hardcoded snapshot.</p>
+<p>Tidy, ontology-tagged, ggplot2-ready human anatomogram polygon data (<code>hgMale</code>/<code>hgFemale</code>), parsed directly from the <a href="https://github.com/ebi-gene-expression-group/anatomogram" class="external-link">EBI Expression Atlas anatomogram SVG source</a>.</p>
 <p>This is a <strong>data package, not a plotting package</strong>. There is no custom geom or plotting function — plot the bundled data with <code><a href="https://ggplot2.tidyverse.org/reference/geom_map.html" class="external-link">ggplot2::geom_map()</a></code> or <code><a href="https://ggplot2.tidyverse.org/reference/geom_polygon.html" class="external-link">ggplot2::geom_polygon()</a></code> directly, which already provide full aesthetic flexibility (fill, alpha, colour, linewidth, …) with no package-specific code needed.</p>
 <p>Human only (male + female) — no mouse/other-organism data.</p>
+<div class="section level2">
+<h2 id="credit-where-its-due">Credit where it’s due<a class="anchor" aria-label="anchor" href="#credit-where-its-due"></a>
+</h2>
+<p>anatomogramdata is the intellectual godchild of <a href="https://github.com/jespermaag/gganatogram" class="external-link">gganatogram</a> by Jesper Maag (<a href="https://doi.org/10.12688/f1000research.16409.2" class="external-link">Maag 2018, <em>F1000Research</em></a>). gganatogram did the original, hard work of bringing the EBI Expression Atlas anatomograms into R and ggplot2, and this package would not exist without it. The idea, the approach, and the <code>hgMale</code>/<code>hgFemale</code> dataset names all come from there.</p>
+<p>I needed an anatomogram for mortality surveillance work on cancer sites and wanted to bring that work up to date: the polygons are traced fresh from the current EBI source drawings, and every tissue carries its ontology ID and organ system. The code is new and reuses none of gganatogram’s code or data, which is why the licences differ (see below).</p>
+<p>The code was written almost entirely by Claude (Anthropic’s AI model), working from my direction. I can’t take intellectual credit for the idea, which belongs to gganatogram and its author, or for the work, which was Claude’s. If you use this package, please cite gganatogram as well; <code>citation("anatomogramdata")</code> lists it.</p>
+</div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
@@ -86,9 +93,9 @@
 <p>See <code>examples/</code> for more worked patterns, including faceting by organ system and the <code><a href="https://ggplot2.tidyverse.org/reference/geom_map.html" class="external-link">ggplot2::geom_map()</a></code> power-user path for mapping more than one aesthetic at once.</p>
 </div>
 <div class="section level2">
-<h2 id="attribution">Attribution<a class="anchor" aria-label="anchor" href="#attribution"></a>
+<h2 id="sources-and-licensing">Sources and licensing<a class="anchor" aria-label="anchor" href="#sources-and-licensing"></a>
 </h2>
-<p>Built directly from the EBI Expression Atlas anatomogram source (Apache-2.0 code / CC-BY-4.0 images), not a fork of the <code>gganatogram</code> package’s code or bundled data — though structurally indebted to <code>gganatogram</code> (Jesper Grud Skat Madsen / jespermaag) as prior art. See <code>dev/NOTES.md</code> for the full build history and attribution/licensing details.</p>
+<p>The polygons are parsed from the EBI Expression Atlas anatomogram source (Apache-2.0 code / CC-BY-4.0 images). The CC-BY-4.0 images require attribution, so cite the EBI source alongside this package (<code>citation("anatomogramdata")</code> lists it). No <code>gganatogram</code> code or bundled data is reused, which is why this package is MIT rather than GPL-2. See <code>dev/NOTES.md</code> for the full build history.</p>
 </div>
 <div class="section level2">
 <h2 id="license">License<a class="anchor" aria-label="anchor" href="#license"></a>

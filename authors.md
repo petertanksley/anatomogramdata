@@ -10,10 +10,10 @@ Source:
 [`inst/CITATION`](https://github.com/petertanksley/anatomogramdata/blob/main/inst/CITATION)
 
 Tanksley P (2026). *anatomogramdata: Tidy Human Anatomogram Polygon Data
-from the EBI Expression Atlas Source*. R package. Parsing pipeline
-structurally indebted to the gganatogram package (Jesper Grud Skat
-Madsen / jespermaag) as prior art, but built independently against the
-live EBI source rather than as a fork of its code or bundled data.,
+from the EBI Expression Atlas Source*. R package. An updated,
+independent reimplementation of the gganatogram package (Maag 2018,
+cited below), whose idea it follows; please cite gganatogram as well.
+Code written almost entirely by Claude (Anthropic).,
 <https://github.com/petertanksley/anatomogramdata>.
 
     @Manual{,
@@ -21,7 +21,24 @@ live EBI source rather than as a fork of its code or bundled data.,
       author = {Peter Tanksley},
       year = {2026},
       url = {https://github.com/petertanksley/anatomogramdata},
-      note = {R package. Parsing pipeline structurally indebted to the gganatogram package (Jesper Grud Skat Madsen / jespermaag) as prior art, but built independently against the live EBI source rather than as a fork of its code or bundled data.},
+      note = {R package. An updated, independent reimplementation of the gganatogram package (Maag 2018, cited below), whose idea it follows; please cite gganatogram as well. Code written almost entirely by Claude (Anthropic).},
+    }
+
+Maag J (2018). “gganatogram: An R package for modular visualisation of
+anatograms and tissues based on ggplot2.” *F1000Research*, **7**, 1576.
+[doi:10.12688/f1000research.16409.2](https://doi.org/10.12688/f1000research.16409.2).
+The original package. anatomogramdata follows its idea and approach;
+please cite it.
+
+    @Article{,
+      title = {gganatogram: An R package for modular visualisation of anatograms and tissues based on ggplot2},
+      author = {Jesper L. V. Maag},
+      journal = {F1000Research},
+      volume = {7},
+      pages = {1576},
+      year = {2018},
+      doi = {10.12688/f1000research.16409.2},
+      note = {The original package. anatomogramdata follows its idea and approach; please cite it.},
     }
 
 EBI Gene Expression Group (2026). “Expression Atlas anatomogram source
